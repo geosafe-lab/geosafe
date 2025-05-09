@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeoSAFE - Geospatial Artificial Intelligence Safety Assurance Framework and Evaluation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+        displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ],
+        processEscapes: true, 
+        tags: 'all',
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GeoSAFE - Geospatial Artificial Intelligence Safety Assurance Framework and Evaluation</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous ACL Submission
+            </span>
+          </div>
+          
+
+          
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              
+              <span class="link-block">
+                <a href="https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              
+              <!-- Video Link. -->
+              
+              <span class="link-block">
+                <a href="https://www.youtube.com/results?search_query=turing+machine"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              
+              <!-- Code Link. -->
+              
+              <span class="link-block">
+                <a href="https://github.com/topics/turing-machines"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              <!-- Dataset Link. -->
+              
+              <span class="link-block">
+                <a href="https://huggingface.co/docs/datasets"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<div class="container is-max-desktop">
+
+<div class="content">
+  <!-- Using HTML to center the abstract -->
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Abstract</h2>
+        <div class="content has-text-justified">
+While the rapid progress of generative AI (Gen-AI) and large language models (LLMs) holds great promise for geospatial applications, it also increases privacy, security, and ethical risks. Hence, there is a need for datasets and benchmarks to evaluate Geo-AI systems for safety, reliability, and alignment with human values. Here, we propose a novel GeoSAFE - Geospatial Safety Assurance Framework and Evaluation, based on a new safety taxonomy for geospatial data comprising of six critical hazard categories notably used in geospatial applications. Moreover, GeoSAFE includes GeoSAFE-Dataset, a Geo-AI safety dataset comprising of 11694 samples of LLM-human prompts and explanations adhering to the proposed taxonomy, built on data-centric AI concepts. These concepts ensure fairness assessment based on bias, toxicity, sentiment and ambiguity, thus adhering to Responsible AI (RAI) principles. We present a zero-shot evaluation of existing general purpose AI-safety LLMs, benchmarking their performance in identifying safe/unsafe prompts. Additionally, we present GeoSAFEGuard, an instruction-tuned LLM using the GeoSAFE-Dataset, demonstrating improved performance over zero-shot evaluation.
+While most general LLMs have high (&gt;20\%) False Unsafe Rate, GeoSAFE attains a 4.6\% False Unsafe Rate, 0.4\% False Safe Rate, and 97\% F1-score on GeoSAFE-Dataset. Finally, we perform an anonymous user-survey for assessing human-GeoSAFE alignment.  
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<h2 id="introduction">Introduction</h2>
+<p>Safe and trustworthy use of Gen-AI virtual assistants powered by Large Language Models (LLMs) is one of the primary objectives for achieving Responsible-AI (RAI). Recently, significant advances have been made in developing benchmarks capable of evaluating LLMs based on hazard taxonomy. However, these developments have primarily focused on general LLMs, and new approaches are needed to extend these capabilities across other specialized domains. This need arises particularly for guarding against risks involved with domain-specific applications, which are often overlooked or deemed irrelevant by general LLM-based systems.</p>
+
+<h2 id="objective">Objective</h2>
+<p>Turing’s main objective in this paper was to investigate the notion of computability and its relation to the Entscheidungsproblem (the decision problem), which is concerned with determining whether a given mathematical statement is provable or not.</p>
+
+<h2 id="key-ideas">Key Ideas</h2>
+
+<ul>
+  <li>A taxonomy of Geo-AI related hazards extending the MLCommons V0.5 taxonomy, categorizing potential risks in geospatial AI applications</li>
+  <li><strong>GeoSAFE-Dataset</strong> - A prompt and responses dataset consisting of safe and unsafe prompts along with the corresponding explanations and chat responses</li>
+  <li><strong>GeoSAFEGuard</strong> - An AI-safety LLM instruction-tuned on the above dataset for classifying text prompts adhering to the proposed Geo-AI hazard taxonomy</li>
+  <li>Evaluation of the human-LLM alignment of the <strong>GeoSAFEGuard</strong> model</li>
+</ul>
+
+<div class="columns is-centered">
+    <div class="column is-8">
+        <img src="/static/image/geosafe-arch.png" alt="GeoSAFE Architecture" />
+        <p class="caption">Figure: GeoSAFE architecture overview showing the data flow and components of the safety assurance framework.</p>
+    </div>
+</div>
+
+<h2 id="evaluation-results">Evaluation Results</h2>
+
+<p>The table below compares the performance of <strong>GeoSAFEGuard</strong> against prominent general purpose LLMs:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Evaluation Model</strong></th>
+      <th><strong>F1</strong> ↑</th>
+      <th><strong>FSR</strong> ↓</th>
+      <th><strong>FUR</strong> ↓</th>
+      <th><strong>P</strong> ↑</th>
+      <th><strong>R</strong> ↑</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Llama Guard 3</strong></td>
+      <td>0.80</td>
+      <td>0.336</td>
+      <td><strong>0</strong></td>
+      <td>0.88</td>
+      <td>0.84</td>
+    </tr>
+    <tr>
+      <td><strong>Phi-4</strong></td>
+      <td>0.84</td>
+      <td>0.267</td>
+      <td>0.004</td>
+      <td>0.89</td>
+      <td>0.87</td>
+    </tr>
+    <tr>
+      <td><strong>Mistral</strong></td>
+      <td><em>0.90</em></td>
+      <td>0.093</td>
+      <td>0.095</td>
+      <td><em>0.91</em></td>
+      <td><em>0.91</em></td>
+    </tr>
+    <tr>
+      <td><strong>Olmo 2</strong></td>
+      <td>0.83</td>
+      <td><em>0.063</em></td>
+      <td>0.286</td>
+      <td>0.84</td>
+      <td>0.82</td>
+    </tr>
+    <tr>
+      <td><strong>Gemma 2</strong></td>
+      <td>0.88</td>
+      <td>0.212</td>
+      <td><em>0.010</em></td>
+      <td><em>0.91</em></td>
+      <td>0.89</td>
+    </tr>
+    <tr>
+      <td><strong>WildGuard</strong></td>
+      <td>0.77</td>
+      <td>0.367</td>
+      <td>0.006</td>
+      <td>0.86</td>
+      <td>0.82</td>
+    </tr>
+    <tr>
+      <td><strong>WalledGuard</strong></td>
+      <td>0.68</td>
+      <td>0.479</td>
+      <td>0.008</td>
+      <td>0.83</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <td><strong>GeoSAFEGuard</strong></td>
+      <td><strong>0.96</strong></td>
+      <td><strong>0.046</strong></td>
+      <td>0.004</td>
+      <td><strong>0.98</strong></td>
+      <td><strong>0.98</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Table: Comparison of evaluation metrics for the GeoSAFEGuard with prominent general purpose LLMs. Best values are in bold, second best in italics. Higher is better for F1, P (Precision), and R (Recall). Lower is better for FSR (False Safe Rate) and FUR (False Unsafe Rate).</em></p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>With the rapid adoption of Geospatial Artificial Intelligence (Geo-AI), especially Geo-LLMs, it is crucial to develop frameworks for moderating such domain-specific LLMs. Furthermore, the significance of location data and emergence of high-resolution remote sensing data makes it imperative to focus on such developments. We present <strong>GeoSAFE-Dataset</strong>, a novel dataset consisting of safe and unsafe prompts, along with corresponding responses. The dataset is based on a new Geo-AI safety taxonomy comprising of hazard categories aligning with either the geospatial datasets or their applications. Additionally, we present evaluations based on zero-shot <strong>Llama Guard 3</strong> and a fine-tuned model, named as <strong>GeoSAFE</strong>, for the proposed dataset. We see an improvement of <strong>1.22x</strong> on the F1-score (0.797 → 0.973) and <strong>1.15x</strong> improvement in Recall (0.841 → 0.975). Most importantly, we see an improvement of <strong>7.3x</strong> in the FSR. Although, the <strong>GeoSAFE</strong> taxonomy is not complete and comprehensive, we are making an attempt to provide dataset and fine-tuned model so that reliable and responsible Geo-AI systems can be developed.</p>
+
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a href="https://github.com/shunzh/project_website">the Jekyll fork</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
